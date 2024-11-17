@@ -34,7 +34,7 @@ param linuxFxVersion string = runtimeNameAndVersion
 param minimumElasticInstanceCount int = -1
 param numberOfWorkers int = -1
 param scmDoBuildDuringDeployment bool = false
-param use32BitWorkerProcess bool = false
+param use32BitWorkerProcess bool = true
 param ftpsState string = 'FtpsOnly'
 param healthCheckPath string = ''
 
