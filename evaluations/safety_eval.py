@@ -89,7 +89,7 @@ async def main():
             scenario=scenario, 
             target=callback, 
             max_conversation_turns=1,
-            max_simulation_results=10, 
+            max_simulation_results=3, 
             jailbreak=False
         )
         adversarial_conversation_result = outputs.to_eval_qa_json_lines()
@@ -109,7 +109,8 @@ async def main():
                     "violence": violence_evaluator
                 },
                 azure_ai_project= azure_ai_project,            
-                output_path="./adversarial_test.json"
+                output_path="./adversarial_test.json",
+                _use_pf_client=False
         )
         except Exception as e:
             print(f"An error occurred during evaluation: {e}\n Retrying without reporting results in Azure AI Project.")
@@ -129,7 +130,8 @@ async def main():
         jb_outputs = await simulator(
             scenario=scenario, 
             target=callback,
-            max_simulation_results=10, 
+            max_conversation_turns=1,
+            max_simulation_results=3, 
             jailbreak=True
         )
         adversarial_conversation_result_w_jailbreak = jb_outputs.to_eval_qa_json_lines()
@@ -146,7 +148,8 @@ async def main():
                     "violence": violence_evaluator
                 },
                 azure_ai_project=azure_ai_project,
-                output_path="./adversarial_test_w_jailbreak.json"
+                output_path="./adversarial_test_w_jailbreak.json",
+                _use_pf_client=False
             )
         except Exception as e:
             print(f"An error occurred during evaluation: {e}\n Retrying without reporting results in Azure AI Project.")            
