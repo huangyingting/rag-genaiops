@@ -1,9 +1,9 @@
-azure-ai-ml
+azure-ai-ml==1.22.1
 azure-ai-resources
-azure-identity==1.16.1
-azure-search-documents==11.4.0
-promptflow==1.11.0
+azure-identity==1.19.0
+azure-search-documents==11.5.2
+promptflow==1.16.1
 promptflow-tools==1.4.0
-promptflow[azure]==1.11.0
+promptflow[azure]==1.16.1
 python-dotenv==1.0.1
 azure-mgmt-cognitiveservices==13.5.0
